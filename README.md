@@ -136,4 +136,12 @@ docker compose up -d --build
 
 ---
 
+## Créditos
+
+Este projeto utiliza como base o repositório [radar-public-sector](https://github.com/flemuh/radar-public-sector) (SpeedLora Radar), desenvolvido por **Fernando Humel**, distribuído sob a [MIT License](https://opensource.org/licenses/MIT).
+
+A licença original está mantida neste repositório e os direitos autorais do código-base pertencem ao autor original. Nenhuma modificação foi feita ao software original.
+
+---
+
 Licença: veja [LICENSE](LICENSE).
