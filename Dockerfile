@@ -1,6 +1,10 @@
 # syntax=docker/dockerfile:1
 FROM python:3.12-slim AS base
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 TZ=America/Sao_Paulo RADAR_DB=/data/radar.sqlite3
+# Prioriza IPv4 na resolução de endereços: o Render não tem rota de saída IPv6,
+# então chamadas a hosts "dual stack" (ex.: api.telegram.org) falham com
+# "[Errno 101] Network is unreachable" se o sistema tentar IPv6 primeiro.
+RUN echo "precedence ::ffff:0:0/96 100" >> /etc/gai.conf
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
